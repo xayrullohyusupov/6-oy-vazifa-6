@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{% static 'img/logoclient.png' %}">
+
+    <title>BASIC - Blacktie.co Free Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div id="h">
+        <div class="logo">
+            <h2>BASIC</h2>
+        </div>
+        <div class="container centered">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Salom mening ismim <b>Xayrulloh Yusupov</b>.<br/>Men veb uchun yaratish.</h1>
+                </div>
+            </div>
+            <div class="row mt">
+                <div class="col-sm-4">
+                    <i class="ion-ios7-monitor-outline"></i>
+                    <h3>Veb-dizayn</h3>
+                </div>
+                <div class="col-sm-4">
+                    <i class="ion-ios7-browsers-outline"></i>
+                    <h3>UI ishlab chiqish</h3>
+                </div>
+                <div class="col-sm-4">
+                    <i class="ion-ios7-copy-outline"></i>
+                    <h3>Brend identifikatori</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container ptb">
+        <div class="row">
+            <h2 class="centered mb">Men chiroyli saytlar va ajoyib ilovalar yarataman<br/>bu sizning startapingizga kuch beradi.</h2>
+            <div class="col-md-6">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            </div>
+            <div class="col-md-6">
+                <p>U nafaqat besh asr davomida, balki elektron terishga sakrashdan ham omon qoldi va deyarli o'zgarishsiz qoldi. U 1960-yillarda Lorem Ipsum parchalarini o'z ichiga olgan Letraset varaqlarining chiqarilishi va yaqinda ish stoli nashriyot dasturlari bilan ommalashgan.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <img src="{% static 'img/items.png' %}" class="img-responsive" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="g">
+        <div class="container">
+            <div class="row centered">
+                <h2>Oxirgi ishlarimni tekshiring.</h2>
+                <div class="col-md-8 col-md-offset-2">
+                    <p>Ommabop e'tiqoddan farqli o'laroq, Lorem Ipsum shunchaki tasodifiy matn emas.<br/>Uning ildizlari eramizdan avvalgi 45-yildan beri klassik lotin adabiyotining bir qismidan kelib chiqqan bo'lib, uning yoshi 2000 yildan oshgan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-centered mt">
+            <div class="recentitems portfolio">
+                {% for item in portfolio_items %}
+                <div class="portfolio-item {{ item.category }}">
+                    <div class="he-wrap tpl6">
+                        <img src="{{ item.image.url }}" class="img-responsive" alt="">
+                        <div class="he-view">
+                            <div class="bg a0" data-animate="fadeIn">
+                                <h3 class="a1" data-animate="fadeInDown">{{ item.title }}</h3>
+                                <a data-rel="prettyPhoto" href="{{ item.image.url }}" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-search"></i></a>
+                                <a href="#" class="dmbutton a2" data-animate="fadeInUp"><i class="ion-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="container mt">
+            <div class="row clients centered">
+                <p class="mb">Men ishlashdan mamnun bo'lgan ba'zi mijozlar.</p>
+                {% for client in clients %}
+                <div class="col-sm-2 col-sm-offset-1">
+                    <img src="{{ client.logo.url }}" alt="{{ client.name }}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div id="sep">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>Men ajoyib San-Fransiskoda yashayman</h1>
+                    <h3 class="mb">Lorem Ipsum oddiygina soxta matn<br/>matbaa va matn terish sanoati.</h3>
+                    <button class="btn btn-conf btn-clear">Ma'lumot uchun so'rov</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="f">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-md-8 col-md-offset-2">
+                    <a href="#"><i class="ion-social-twitter"></i></a>
+                    <a href="#"><i class="ion-social-dribbble"></i></a>
+                    <a href="#"><i class="ion-social-instagram"></i></a>
+                    <a href="#"><i class="ion-social-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/retina-1.1.0.js' %}"></script>
+    <script src="{% static 'js/jquery.hoverdir.js' %}"></script>
+    <script src="{% static 'js/jquery.hoverex.min.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
